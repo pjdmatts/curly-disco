@@ -20,23 +20,27 @@ def defCatalog():
 
 @app.route('/catalog/<int:category_id>/items')
 def showItems(category_id):
-    return "This is the item list under a category"
+    return render_template("publiccategory.html")
 
 @app.route('/catalog/<int:category_id>/<int:item_id>')
 def showItem(category_id, item_id):
-    return "This is the item page"
+    return render_template("publicitem.html")
+
+@app.route('/catalog/add')
+def addItem():
+    return render_template("add.html")
 
 @app.route('/catalog/<int:category_id>/add')
-def addItem(category_id):
-    return "This is the add item page"
+def addCategoryItem(category_id):
+    return render_template("add.html")
 
 @app.route('/catalog/<int:category_id>/<int:item_id>/edit')
 def editItem(category_id, item_id):
-    return "This is the edit item page"
+    return render_template("edit.html")
 
 @app.route('/catalog/<int:category_id>/<int:item_id>/delete')
 def deleteItem(category_id, item_id):
-    return "This is the delete item page"
+    return render_template("delete.html")
 
 if __name__ == '__main__':
     app.debug = True

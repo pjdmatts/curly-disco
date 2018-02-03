@@ -1,7 +1,7 @@
 ## Iterative Development Outline
 
-- [ ] Mock-Ups
-- [ ] Routing
+- [x] Mock-Ups
+- [x] Routing
 - [ ] Templates & Forms
 - [ ] CRUD Functionality
 - [ ] API Endpoints

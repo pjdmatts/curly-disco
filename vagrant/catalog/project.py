@@ -1,20 +1,22 @@
 from flask import Flask, render_template, request, redirect, jsonify, url_for, flash
 app = Flask(__name__)
 
+
 # JSON Endpoints
 @app.route('/catalog/JSON')
 def catalogJSON():
-    return "This is the API endpoint for the whole catalog"
+    return "API-tastic"
 
 @app.route('/catalog/<int:category_id>/JSON')
 def itemsJSON(category_id):
     return "This is the API endpoint for all items under a category"
 
+
 # Basic Routing
 @app.route('/')
 @app.route('/catalog')
 def defCatalog():
-    return "This is the main page for Chumley Warner"
+    return render_template("publichome.html")
 
 @app.route('/catalog/<int:category_id>/items')
 def showItems(category_id):

@@ -15,7 +15,7 @@ def itemsJSON(category_id):
 # Basic Routing
 @app.route('/')
 @app.route('/catalog')
-def defCatalog():
+def showCatalog():
     return render_template("publichome.html")
 
 @app.route('/catalog/<int:category_id>/items')
@@ -26,9 +26,18 @@ def showItems(category_id):
 def showItem(category_id, item_id):
     return render_template("publicitem.html")
 
-@app.route('/catalog/add')
+@app.route('/catalog/add', methods=['GET', 'POST'])
 def addItem():
-    return render_template("add.html")
+    # if 'username' not in login_session:
+    #     return redirect('/login')
+    # if request.method == 'POST':
+    #     newItem = Item(name=request.form['name'], user_id=login_session['user_id'])
+    #     session.add(newItem)
+    #     flash('New Items %s Successfully Created' % newItem.name)
+    #     session.commit()
+    #     return redirect(url_for('showCatalog'))
+    # else:
+    return render_template('add.html')
 
 @app.route('/catalog/<int:category_id>/add')
 def addCategoryItem(category_id):

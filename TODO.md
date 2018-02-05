@@ -2,7 +2,7 @@
 
 - [x] Mock-Ups
 - [x] Routing
-- [ ] Templates & Forms
+- [x] Templates & Forms
 - [ ] CRUD Functionality
 - [ ] API Endpoints
 - [ ] Styling and Message Flashing

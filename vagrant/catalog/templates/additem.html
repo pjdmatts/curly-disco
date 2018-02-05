@@ -13,12 +13,7 @@
                 <legend>New Item Details</legend>
 
                 <div>
-                    <select name="category">
-                        {% for category in categories %}
-                        <option value= "{{category.id}}">{{category.name}}</option>
-                        {% endfor %}
-                    </select>
-
+                    <h3>Category: {{category.name}}</h3>
                 </div>
 
                 <div>

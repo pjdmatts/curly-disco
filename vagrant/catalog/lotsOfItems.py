@@ -19,67 +19,107 @@ DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
 # Create dummy user
-User1 = User(name="Robo Barista", email="tinnyTim@udacity.com",
+User1 = User(name="Mr. Warner Himself", email="cwarner@example.com",
              picture='https://pbs.twimg.com/profile_images/2671170543/18debd694829ed78203a5a36dd364160_400x400.png')
 session.add(User1)
 session.commit()
 
 #Items for Category1
-category1 = Category(name = "")
+category1 = Category(name = "Moustache Accessories")
 
 session.add(category1)
 session.commit()
 
 
-item1 = Item(user_id=1, name = "", description = "", category = category1)
+item1 = Item(user_id=1, name = "comb", description = "a tiny comb for your moustache", category = category1)
 
 session.add(item1)
 session.commit()
 
+item2 = Item(user_id=1, name = "scissors", description = "to keep the moustache neat and trim", category = category1)
+
+session.add(item2)
+session.commit()
+
+item3 = Item(user_id=1, name = "wax", description = "to shape the moustache", category = category1)
+
+session.add(item3)
+session.commit()
+
 #Items for Category2
-category2 = Category(name = "")
+category2 = Category(name = "Walking Sticks")
 
 session.add(category2)
 session.commit()
 
 
-item1 = Item(user_id=1, name = "", description = "", category = category2)
+item1 = Item(user_id=1, name = "gandalf stick", description = "a large stick, possbily with magical properties", category = category2)
 
 session.add(item1)
 session.commit()
 
+item2 = Item(user_id=1, name = "yoda stick", description = "a small stick for bashing things with", category = category2)
+
+session.add(item2)
+session.commit()
+
+item3 = Item(user_id=1, name = "gentlemans spy can", description = "one of those cool canes with a sword hidden inside", category = category2)
+
+session.add(item2)
+session.commit()
+
 #Items for Category3
-category3 = Category(name = "")
+category3 = Category(name = "Telephonice Devices")
 
 session.add(category3)
 session.commit()
 
 
-item1 = Item(user_id=1, name = "", description = "", category = category3)
+item1 = Item(user_id=1, name = "The old standby", description = "a megaphone", category = category3)
 
 session.add(item1)
 session.commit()
 
+item2 = Item(user_id=1, name = "The Jefferson 1500", description = "A cool old phone", category = category3)
+
+session.add(item2)
+session.commit()
+
+item3 = Item(user_id=1, name = "The Schoenbach 12", description = "Another cool old phone", category = category3)
+
+session.add(item3)
+session.commit()
+
 #Items for Category4
-category4 = Category(name = "")
+category4 = Category(name = "Things for Exploring")
 
 session.add(category4)
 session.commit()
 
 
-item1 = Item(user_id=1, name = "", description = "", category = category4)
+item1 = Item(user_id=1, name = "Jumbo", description = "An Elephant", category = category4)
 
 session.add(item1)
 session.commit()
 
+item2 = Item(user_id=1, name = "Home away from home", description = "A tent", category = category4)
+
+session.add(item2)
+session.commit()
+
+item3 = Item(user_id=1, name = "Mr Smith", description = "A Butler", category = category4)
+
+session.add(item3)
+session.commit()
+
 #Items for Category5
-category4 = Category(name = "")
+category5 = Category(name = "Hats")
 
 session.add(category5)
 session.commit()
 
 
-item1 = Item(user_id=1, name = "", description = "", category = category5)
+item1 = Item(user_id=1, name = "The Great Detective", description = "A Dearstalker", category = category5)
 
 session.add(item1)
 session.commit()

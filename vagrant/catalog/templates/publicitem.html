@@ -7,13 +7,14 @@
 		</div>
 	</div>
 
+
 	<div>
-        <h2>Item Name</h2>
+        <h2>{{ item.name }}</h2>
 	</div>
 
     <div>
-        <p>Item Name, from the category Category Name</p>
-        <p>Item Description</p>
+        <p>{{item.name}}, from the category {{category.name}}</p>
+        <p>{{item.description}}</p>
     </div>
 
 {% endblock %}

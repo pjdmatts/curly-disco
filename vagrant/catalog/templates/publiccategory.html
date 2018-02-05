@@ -12,28 +12,35 @@
 	</div>
 
     <div>
-        <ul>
-            <li>Globes</li>
-            <li>Walking Sticks</li>
-            <li>Telephonic Devices</li>
-            <li>Ephemera</li>
-            <li>Moustache Care</li>
-            <li>Exploring</li>
-        </ul>
+        {% for category in categories %}
+        	<a href = "{{url_for('showItems', category_id = category.id)}}">
+        		<div>
+        			<div></div>
+        				<div>
+        					<h3>{{category.name}}</h3>
+        				</div>
+        			<div></div>
+        		</div>
+        	</a>
+        {% endfor %}
     </div>
 
     <div>
-        <h2>Category Name</h2>
+        <h2>{{selected_category.name}}</h2>
     </div>
 
     <div>
-        <ul>
-            <li>Item Name</li>
-            <li>Item Name</li>
-            <li>Item Name</li>
-            <li>Item Name</li>
-            <li>Item Name</li>
-        </ul>
+        {% for item in items %}
+        	<a href = "{{url_for('showItem', category_id = selected_category.id, item_id = item.id)}}">
+        		<div>
+        			<div></div>
+        				<div>
+        					<h3>{{item.name}}</h3>
+        				</div>
+        			<div></div>
+        		</div>
+        	</a>
+        {% endfor %}
     </div>
 
 

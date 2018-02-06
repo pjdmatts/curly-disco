@@ -17,12 +17,12 @@ session = DBSession()
 
 # JSON Endpoints
 @app.route('/categories/JSON')
-def restaurantsJSON():
+def categoriesJSON():
     categories = session.query(Category).all()
     return jsonify(categories=[c.serialize for c in categories])
 
 @app.route('/catalog/<int:category_id>/items/JSON')
-def restaurantMenuJSON(category_id):
+def categoryItemsJSON(category_id):
     category= session.query(Category).filter_by(id=category_id).one()
     items = session.query(Item).filter_by(
         category_id=category_id).all()

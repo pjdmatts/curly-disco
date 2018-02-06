@@ -4,6 +4,6 @@
 - [x] Routing
 - [x] Templates & Forms
 - [x] CRUD Functionality
-- [ ] API Endpoints
+- [x] API Endpoints
 - [ ] Styling and Message Flashing
 - [ ] Log In/Out & Authentication

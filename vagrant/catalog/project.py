@@ -47,18 +47,19 @@ def showItem(category_id, item_id):
     item = session.query(Item).filter_by(id=item_id).one()
     return render_template("publicitem.html", category=category, item=item)
 
-# @app.route('/catalog/add', methods=['GET', 'POST'])
-# def addItem():
-#     categories = session.query(Category).order_by(asc(Category.name))
-#     if request.method == 'POST':
-#         newItem = Item(name=request.form['name'], description=request.form['description'],
-#                         category_id=request.form['category'], user_id=category.user_id)
-#         session.add(newItem)
-#         session.commit()
-#         return redirect(url_for('showCatalog')
-#     else:
-#         return render_template('add.html')
-
+@app.route('/catalog/add', methods=['GET', 'POST'])
+def addItem():
+    categories = session.query(Category).order_by(asc(Category.name))
+    if request.method == 'POST':
+        category_id = request.form['category_id']
+        category = session.query(Category).filter_by(id=category_id).one()
+        newItem = Item(name=request.form['name'], description=request.form['description'],
+        category_id = category_id, user_id=category.user_id)
+        session.add(newItem)
+        session.commit()
+        return redirect(url_for('showCatalog'))
+    else:
+        return render_template('add.html', categories=categories)
 
 @app.route('/catalog/<int:category_id>/add', methods=['GET', 'POST'])
 def addCategoryItem(category_id):

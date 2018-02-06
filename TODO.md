@@ -3,7 +3,7 @@
 - [x] Mock-Ups
 - [x] Routing
 - [x] Templates & Forms
-- [ ] CRUD Functionality
+- [x] CRUD Functionality
 - [ ] API Endpoints
 - [ ] Styling and Message Flashing
 - [ ] Log In/Out & Authentication

@@ -6,10 +6,12 @@
     <h2>Delete An Item</h2>
 </div>
 
-<div>
+<h3> Are you sure you want to delete {{item.name}}? </h3>
 
-</div>
+<form action="#" method='post'>
+    <button type="submit" class="#" id="submit" type="submit">Delete</button>
+</form>
 
-
+<a href="{{url_for('showItems', category_id=category.id)}}"><button class="#">Cancel</button></a>
 
 {% endblock %}

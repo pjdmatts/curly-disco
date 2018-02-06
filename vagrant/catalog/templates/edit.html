@@ -11,20 +11,22 @@
         <form action="#" method="post">
             <fieldset>
                 <legend>Edit Item Details</legend>
+
                 <div>
-                    <div>
-                        <label for="categories">Category</label>
-                    </div>
-                    <div>
-                        <select name="categories" id=""></select>
-                    </div>
+                    <select class="#" id="#" name="category_id">
+                        <option value="{{category.id}}"selected="selected">{{category.name}}</option>
+                        {% for category in categories %}
+                        <option value= "{{category.id}}">{{category.name}}</option>
+                        {% endfor %}
+                    </select>
                 </div>
+
                 <div>
                     <div>
                         <label for="name">Name:</label>
                     </div>
                     <div>
-                        <input type="text" class="#" maxlength="100" name="name">
+                        <input type="text" class="#" maxlength="100" name="name" value="{{item.name}}">
                     </div>
                 </div>
                 <div>
@@ -32,7 +34,7 @@
                         <label for="description">Description</label>
                     </div>
                     <div>
-                        <textarea name="description" rows="8" cols="80">Enter Item Details...</textarea>
+                        <textarea name="description" rows="8" cols="80">{{item.description}}</textarea>
                     </div>
                 </div>
                 <div>

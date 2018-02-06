@@ -15,16 +15,18 @@ Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-
 # JSON Endpoints
-@app.route('/catalog/JSON')
-def catalogJSON():
-    return "API-tastic"
+@app.route('/categories/JSON')
+def restaurantsJSON():
+    categories = session.query(Category).all()
+    return jsonify(categories=[c.serialize for c in categories])
 
-@app.route('/catalog/<int:category_id>/JSON')
-def itemsJSON(category_id):
-    return "This is the API endpoint for all items under a category"
-
+@app.route('/catalog/<int:category_id>/items/JSON')
+def restaurantMenuJSON(category_id):
+    category= session.query(Category).filter_by(id=category_id).one()
+    items = session.query(Item).filter_by(
+        category_id=category_id).all()
+    return jsonify(category=category.serialize, items=[i.serialize for i in items])
 
 # Basic Routing
 @app.route('/')
@@ -47,6 +49,7 @@ def showItem(category_id, item_id):
     item = session.query(Item).filter_by(id=item_id).one()
     return render_template("publicitem.html", category=category, item=item)
 
+#CRUDler
 @app.route('/catalog/add', methods=['GET', 'POST'])
 def addItem():
     categories = session.query(Category).order_by(asc(Category.name))

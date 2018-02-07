@@ -33,7 +33,8 @@ def categoryItemsJSON(category_id):
 @app.route('/catalog')
 def showCatalog():
     categories = session.query(Category).order_by(asc(Category.name))
-    return render_template("publichome.html", categories=categories)
+    items = session.query(Item).order_by(Item.id.desc()).limit(4)
+    return render_template("publichome.html", categories=categories, items=items)
 
 @app.route('/catalog/<int:category_id>/items')
 def showItems(category_id):

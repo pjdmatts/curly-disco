@@ -1,25 +1,21 @@
 {% extends "main.html" %}
 {% include "header.html" %}
 {% block content %}
-	<div>
-		<div>
-			<a href=#>Click Here to Log in </a>
-		</div>
-	</div>
 
+	<div class="itemDetails">
+        <div class="">
+                <h2>{{ item.name }}</h2>
+        </div>
 
-	<div>
-        <h2>{{ item.name }}</h2>
-	</div>
+            <div class="">
+                <p>{{item.name}}, from the category {{category.name}}</p>
+                <p>{{item.description}}</p>
+            </div>
 
-    <div>
-        <p>{{item.name}}, from the category {{category.name}}</p>
-        <p>{{item.description}}</p>
-    </div>
-
-    <div class="">
-        <a href = "{{url_for('editItem', category_id = category.id, item_id=item.id)}}">Edit Item</a>
-        <a href = "{{url_for('deleteItem', category_id = category.id, item_id=item.id)}}">Delete Item</a>
+            <div class="">
+                <a href = "{{url_for('editItem', category_id = category.id, item_id=item.id)}}">Edit Item</a>
+                <a href = "{{url_for('deleteItem', category_id = category.id, item_id=item.id)}}">Delete Item</a>
+            </div>
     </div>
 
 {% endblock %}

@@ -2,47 +2,49 @@
 {% include "header.html" %}
 {% block content %}
 
-<div>
-    <h2>Edit an Item</h2>
-</div>
-
-<div>
+<div class="addForm">
     <div>
-        <form action="#" method="post">
-            <fieldset>
-                <legend>Edit Item Details</legend>
+        <h2>Edit an Item</h2>
+    </div>
 
-                <div>
-                    <select class="#" id="#" name="category_id">
-                        <option value="{{category.id}}"selected="selected">{{category.name}}</option>
-                        {% for category in categories %}
-                        <option value= "{{category.id}}">{{category.name}}</option>
-                        {% endfor %}
-                    </select>
-                </div>
+    <div>
+        <div>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Edit Item Details</legend>
 
-                <div>
                     <div>
-                        <label for="name">Name:</label>
+                        <select class="#" id="#" name="category_id">
+                            <option value="{{category.id}}"selected="selected">{{category.name}}</option>
+                            {% for category in categories %}
+                            <option value= "{{category.id}}">{{category.name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div>
+                        <div>
+                            <label for="name">Name:</label>
+                        </div>
+                        <div>
+                            <input type="text" class="#" maxlength="100" name="name" value="{{item.name}}">
+                        </div>
                     </div>
                     <div>
-                        <input type="text" class="#" maxlength="100" name="name" value="{{item.name}}">
+                        <div>
+                            <label for="description">Description</label>
+                        </div>
+                        <div>
+                            <textarea name="description" rows="8" cols="80">{{item.description}}</textarea>
+                        </div>
                     </div>
-                </div>
-                <div>
                     <div>
-                        <label for="description">Description</label>
+                        <button type="submit" class="#" id="submit" type="submit">
+                        <span class="#" aria-hidden="true"></span>Update</button>
                     </div>
-                    <div>
-                        <textarea name="description" rows="8" cols="80">{{item.description}}</textarea>
-                    </div>
-                </div>
-                <div>
-                    <button type="submit" class="#" id="submit" type="submit">
-    				<span class="#" aria-hidden="true"></span>Update</button>
-                </div>
-            </fieldset>
-        </form>
+                </fieldset>
+            </form>
+        </div>
     </div>
 </div>
 

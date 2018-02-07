@@ -2,17 +2,17 @@
 {% include "header.html" %}
 {% block content %}
 
-<div>
-    <h2>Add An Item To The Collection</h2>
-</div>
+<div class="addForm">
+    <div class="">
+        <h2>Add An Item To The Collection</h2>
+    </div>
 
-<div>
-    <div>
+    <div class="">
         <form action="#" method="post">
             <fieldset>
                 <legend>New Item Details</legend>
 
-                <div>
+                <div class="">
                     <h3>Category: {{category.name}}</h3>
                 </div>
 
@@ -34,7 +34,7 @@
                 </div>
                 <div>
                     <button type="submit" class="#" id="submit" type="submit">
-    				<span class="#" aria-hidden="true"></span>Create</button>
+                        <span class="#" aria-hidden="true"></span>Create</button>
                 </div>
             </fieldset>
         </form>

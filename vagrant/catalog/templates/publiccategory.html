@@ -1,50 +1,50 @@
 {% extends "main.html" %}
 {% include "header.html" %}
 {% block content %}
-	<div>
-		<div>
-			<a href=#>Click Here to Log in </a>
-		</div>
-	</div>
 
-	<div>
-        <h2>Categories In The Collection</h2>
-	</div>
 
-    <div>
-        {% for category in categories %}
-        	<a href = "{{url_for('showItems', category_id = category.id)}}">
-        		<div>
-        			<div></div>
-        				<div>
-        					<h3>{{category.name}}</h3>
-        				</div>
-        			<div></div>
-        		</div>
-        	</a>
-        {% endfor %}
+	<div class="categorySidebar">
+        <div class="listTitle">
+                <h2>Categories In The Collection</h2>
+        </div>
+
+            <div>
+                {% for category in categories %}
+                    <a href = "{{url_for('showItems', category_id = category.id)}}">
+                        <div>
+                            <div></div>
+                                <div>
+                                    <h3>{{category.name}}</h3>
+                                </div>
+                            <div></div>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
     </div>
 
-    <div>
-        <h2>{{selected_category.name}}</h2>
-    </div>
+    <div class="itemsSection">
+        <div class="">
+            <h2>{{selected_category.name}}</h2>
+        </div>
 
-    <div>
-        <a href = "{{url_for('addCategoryItem', category_id = selected_category.id)}}">Add An Item To This Category</a>
-    </div>
+        <div class="">
+            <a href = "{{url_for('addCategoryItem', category_id = selected_category.id)}}">Add An Item To This Category</a>
+        </div>
 
-    <div>
-        {% for item in items %}
-        	<a href = "{{url_for('showItem', category_id = selected_category.id, item_id = item.id)}}">
-        		<div>
-        			<div></div>
-        				<div>
-        					<h3>{{item.name}}</h3>
-        				</div>
-        			<div></div>
-        		</div>
-        	</a>
-        {% endfor %}
+        <div class="">
+            {% for item in items %}
+                <a href = "{{url_for('showItem', category_id = selected_category.id, item_id = item.id)}}">
+                    <div>
+                        <div></div>
+                            <div>
+                                <h3>{{item.name}}</h3>
+                            </div>
+                        <div></div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
     </div>
 
 

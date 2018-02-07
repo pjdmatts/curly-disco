@@ -23,15 +23,12 @@
     </div>
 
     <div class="itemsSection">
-        <div class="">
-            <a href = "{{url_for('addItem')}}">Add An Item To The Collection</a>
-        </div>
 
-        <div class="">
+        <div class="listTitle">
             <h2>Recent Additions To The Collection</h2>
         </div>
 
-        <div class="">
+        <div class="itemList">
             {% for item in items %}
                 <a href = "{{url_for('showItem', category_id = item.category_id, item_id = item.id)}}">
                     <div>
@@ -43,6 +40,10 @@
                     </div>
                 </a>
             {% endfor %}
+        </div>
+
+        <div class="addItem">
+            <a href = "{{url_for('addItem')}}">Add An Item To The Collection</a>
         </div>
     </div>
 

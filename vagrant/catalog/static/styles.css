@@ -5,11 +5,31 @@ body {
     flex-direction: column;
 }
 
+/* header section of template */
+
 .welcome {
     display: flex;
     flex-direction: row;
-    margin: 2em 0 2em 0;
+    justify-content: space-between;
+    margin: 2em 0 1.5em 0;
 }
+
+.brand {
+    align-self: center;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.login {
+    align-self: center;
+}
+
+.login a {
+    text-decoration: none;
+}
+
+/* content section of template */
 
 .container {
     display: flex;
@@ -18,19 +38,57 @@ body {
 }
 
 .categorySidebar {
-
-}
-
-.itemsSection {
-    margin-left: 1em;
-}
-
-.addForm {
     display: flex;
     flex-direction: column;
 }
 
+.categoryList {
+    margin-top: 1em;
+}
+
+.itemList {
+    margin-top: 1em;
+}
+
+.itemsSection {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1em;
+}
+
+.listTitle {
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.addItem {
+    margin-top: 1em;
+}
+
+/*items*/
 .itemDetails {
+    display: flex;
+    flex-direction: column;
+}
+
+.itemDescription {
+    margin: 1em auto 1em auto;
+}
+
+.about {
+    font-size: 1em;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.details {
+    margin-top: 0.5em;
+    margin-left: 1em;
+}
+
+/*forms*/
+.addForm {
     display: flex;
     flex-direction: column;
 }
@@ -38,4 +96,5 @@ body {
 .choices {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }

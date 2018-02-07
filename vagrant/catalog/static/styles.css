@@ -1,6 +1,7 @@
 body {
     max-width: 960px;
     margin: 0 auto 0 auto;
+    background-color: #f9f7f1;
     display: flex;
     flex-direction: column;
 }
@@ -27,6 +28,27 @@ body {
 
 .login a {
     text-decoration: none;
+    color: black;
+}
+
+.login a:visited {
+    color: grey;
+}
+
+.login a:hover {
+    font-weight: bold;
+}
+
+.tagline {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1.2em;
+    font-size: 1.2em;
+    font-style: italic;
+    text-transform: capitalize;
+    border-bottom: solid;
+    border-width: thin;
+    padding-bottom: 1em;
 }
 
 /* content section of template */
@@ -34,20 +56,47 @@ body {
 .container {
     display: flex;
     flex-direction: row;
-
 }
 
 .categorySidebar {
     display: flex;
     flex-direction: column;
+    border-right: solid;
+    border-width: thin;
+    padding-right: 1em;
 }
 
 .categoryList {
     margin-top: 1em;
+
+}
+
+.categoryList a {
+    text-decoration: none;
+}
+
+.categoryList a:visited {
+    color: grey;
+}
+
+.categoryList a:hover {
+    font-weight: bold;
 }
 
 .itemList {
     margin-top: 1em;
+}
+
+.itemList a {
+    text-decoration: none;
+}
+
+.itemList a:visited {
+    color: grey;
+}
+
+.itemList a:hover {
+    font-weight: bold;
 }
 
 .itemsSection {
@@ -64,6 +113,21 @@ body {
 
 .addItem {
     margin-top: 1em;
+    font-style: italic;
+    font-weight: lighter;
+}
+
+.addItem a {
+    text-decoration: none;
+    color: black;
+}
+
+.addItem a:visited {
+    color: grey;
+}
+
+.addItem a:hover {
+    font-weight: bold;
 }
 
 /*items*/
@@ -93,8 +157,46 @@ body {
     flex-direction: column;
 }
 
+.formInner {
+    margin-top: 1em;
+}
+
+.legend {
+    margin-bottom: 1em;
+    font-weight: bold;
+}
+
+.categorySelect {
+    margin-bottom: 0.5em;
+}
+
+.nameEdit {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.5em;
+}
+
+.descriptionLabel {
+    margin-bottom: 0.5em;
+}
+
 .choices {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    max-width: 160px;
+    margin-top: 1em;
+}
+
+.categoryTitle {
+    margin-bottom: 0.5em;
+    font-style: italic;
+}
+
+.dropDown {
+    margin-left: 0.5em;
+}
+
+.input {
+    margin-left: 0.5em;
 }

@@ -3,18 +3,20 @@
 {% block content %}
 
 <div class="addForm">
-    <div>
+    <div class="listTitle">
         <h2>Delete An Item</h2>
     </div>
 
-    <h3> Are you sure you want to delete {{item.name}}? </h3>
+    <div class="formInner">
+        <h3> Are you sure you want to delete {{item.name}}? </h3>
 
-    <div class="choices">
-        <form action="#" method='post'>
-            <button type="submit" class="#" id="submit" type="submit">Delete</button>
-        </form>
+        <div class="choices">
+            <form action="#" method='post'>
+                <button type="submit" class="#" id="submit" type="submit">Delete</button>
+            </form>
 
-        <a href="{{url_for('showItems', category_id=category.id)}}"><button class="#">Cancel</button></a>
+            <a href="{{url_for('showItems', category_id=category.id)}}"><button class="#">Cancel</button></a>
+        </div>
     </div>
 </div>
 

@@ -3,18 +3,18 @@
 {% block content %}
 
 <div class="addForm">
-    <div>
+    <div class="listTitle">
         <h2>Edit an Item</h2>
     </div>
 
-    <div>
-        <div>
+    <div class="formInner">
             <form action="#" method="post">
                 <fieldset>
-                    <legend>Edit Item Details</legend>
+                    <legend class="legend">Edit Item Details</legend>
 
-                    <div>
-                        <select class="#" id="#" name="category_id">
+                    <div class="categorySelect">
+                        <label for="category_id">Category: </label>
+                        <select class="dropDown" id="#" name="category_id">
                             <option value="{{category.id}}"selected="selected">{{category.name}}</option>
                             {% for category in categories %}
                             <option value= "{{category.id}}">{{category.name}}</option>
@@ -22,29 +22,28 @@
                         </select>
                     </div>
 
-                    <div>
+                    <div class="nameEdit">
                         <div>
-                            <label for="name">Name:</label>
+                            <label for="name">Name: </label>
                         </div>
                         <div>
-                            <input type="text" class="#" maxlength="100" name="name" value="{{item.name}}">
+                            <input type="text" class="input" maxlength="100" name="name" value="{{item.name}}">
                         </div>
                     </div>
-                    <div>
-                        <div>
+                    <div class="descriptionEdit">
+                        <div class="descriptionLabel">
                             <label for="description">Description</label>
                         </div>
                         <div>
                             <textarea name="description" rows="8" cols="80">{{item.description}}</textarea>
                         </div>
                     </div>
-                    <div>
+                    <div class="choices">
                         <button type="submit" class="#" id="submit" type="submit">
                         <span class="#" aria-hidden="true"></span>Update</button>
                     </div>
                 </fieldset>
             </form>
-        </div>
     </div>
 </div>
 

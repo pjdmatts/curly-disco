@@ -41,10 +41,11 @@
                 </a>
             {% endfor %}
         </div>
-
+        {% if login_session %}
         <div class="addItem">
             <a href = "{{url_for('addItem')}}">Add An Item To The Collection</a>
         </div>
+        {% endif %}
     </div>
 
 {% endblock %}

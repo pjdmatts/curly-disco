@@ -11,11 +11,12 @@
                 <p class="about">{{item.name}}, from the category {{category.name}}</p>
                 <p class="details">{{item.description}}</p>
             </div>
-
+            {% if login_session %}
             <div class="choices">
                 <a href = "{{url_for('editItem', category_id = category.id, item_id=item.id)}}"><button>Edit Item</button></a>
                 <a href = "{{url_for('deleteItem', category_id = category.id, item_id=item.id)}}"><button>Delete Item</button></a>
             </div>
+            {% endif %}
     </div>
 
 {% endblock %}

@@ -41,9 +41,11 @@
                 </a>
             {% endfor %}
         </div>
+        {% if login_session %}
         <div class="addItem">
             <a href = "{{url_for('addCategoryItem', category_id = selected_category.id)}}">Add An Item To This Category</a>
         </div>
+        {% endif %}
     </div>
 
 

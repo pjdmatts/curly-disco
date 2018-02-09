@@ -73,6 +73,7 @@ body {
 
 .categoryList a {
     text-decoration: none;
+    color: black;
 }
 
 .categoryList a:visited {
@@ -89,6 +90,7 @@ body {
 
 .itemList a {
     text-decoration: none;
+    color: black;
 }
 
 .itemList a:visited {

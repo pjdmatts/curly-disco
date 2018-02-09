@@ -3,12 +3,10 @@
         <h1>Colonel Carruthers' Curious Cabinet Of Collectible Cast Offs</h1>
     </div>
     <div class="login">
-        {% if 'username' not in session %}
+        {% if 'test'=='test' %}
             <a href="{{ url_for('showLogin') }}">log in</a>
-            <p>name: {{session.state}}</p>
         {% else %}
-            <a href="#">log out</a>
-            <p>name: {{session.state}}</p>
+            <a href="{{ url_for('logOut')}}">log out</a>
         {% endif %}
     </div>
 </div>

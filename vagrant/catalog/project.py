@@ -1,13 +1,12 @@
+#this is the main Flask App.
+
 from flask import Flask, render_template, request, redirect, jsonify, url_for, flash
 from sqlalchemy import create_engine, asc
 from sqlalchemy.orm import sessionmaker
-
-# from database_setup import Base, Category, Item, User
 from database_setup import Base, Category, Item, User
 from flask import session as login_session
 import random
 import string
-
 from oauth2client.client import flow_from_clientsecrets
 from oauth2client.client import FlowExchangeError
 import httplib2
@@ -38,7 +37,7 @@ def showLogin():
     # return "The current session state is %s" % login_session['state']
     return render_template('login.html', STATE=state)
 
-#handle the google authorization
+#Handle the google authorization
 @app.route('/gconnect', methods=['POST'])
 def gconnect():
     # Validate state token
@@ -168,6 +167,7 @@ def gdisconnect():
         response.headers['Content-Type'] = 'application/json'
         return response
 
+#Log out
 @app.route('/logout')
 def logout():
     if 'username' in login_session:
@@ -219,7 +219,9 @@ def showItem(category_id, item_id):
     item = session.query(Item).filter_by(id=item_id).one()
     return render_template("publicitem.html", category=category, item=item)
 
-#CRUDler
+#CRUD operations
+#Only let logged in users perfor Create, Update or Delete
+
 @app.route('/catalog/add', methods=['GET', 'POST'])
 def addItem():
     if 'username' not in login_session:

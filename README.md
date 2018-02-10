@@ -18,14 +18,28 @@ Third-part OAuth authentication is through [Google Accounts](https://developers.
 
 The application provides a JSON endpoint that serves the same information as displayed in the HTML endpoints for items in the catalog.
 
-### _Installation_
+### Installation
 
 Download the necessary files from [this Github repository](https://github.com/pjdmatts/curly-disco)
 
-### _Usage_
+### Requirements
 
-Instructions on how to run the application in a development server goes here
+In addition to the files in the repository above you will need to install Vagrant and VirtualBox
 
-### _To-Do_
+### Usage
+
+The application runs from within a Vagrant VM:
+
+- Clone the vm
+- Launch the Vagrant VM.
+- ssh into the Vagrant maching
+- navigate to /vagrant/catalog
+- initialize the database with the `database_setup.py` script
+- run the app with the following command: `python/project.py`
+- Access and test the application by visiting http://localhost:5000 locally
+
+The application will allow you to build a catalog of items. However if you require a set of seed data run `lotsOfitems.py` after the `database_setup.py` and before running the app
+
+### To-Do
 
 Notes to self on further enhancements to the application.

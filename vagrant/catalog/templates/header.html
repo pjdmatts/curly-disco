@@ -13,3 +13,14 @@
 <div class="tagline">
     <h2>Where you will find the most interesting objects</h2>
 </div>
+<div class="flashes">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+      {% endif %}
+    {% endwith %}
+</div>

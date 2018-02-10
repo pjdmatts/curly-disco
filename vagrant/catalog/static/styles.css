@@ -51,6 +51,15 @@ body {
     padding-bottom: 1em;
 }
 
+.flashes {
+    display: flex;
+    margin-bottom: 0.8em;
+    font-size: 0.8em;
+    font-style: italic;
+    text-transform: uppercase;
+    color: red;
+}
+
 /* content section of template */
 
 .container {

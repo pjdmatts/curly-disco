@@ -92,6 +92,7 @@ def addItem():
         newItem = Item(name=request.form['name'], description=request.form['description'],
         category_id = category_id, user_id=category.user_id)
         session.add(newItem)
+        flash('New Item %s Successfully Created' % newItem.name)
         session.commit()
         return redirect(url_for('showCatalog'))
     else:
@@ -106,6 +107,7 @@ def addCategoryItem(category_id):
         newItem = Item(name=request.form['name'], description=request.form['description'],
                         category_id=category_id, user_id=category.user_id)
         session.add(newItem)
+        flash('New Item %s Successfully Created' % newItem.name)
         session.commit()
         return redirect(url_for('showItems', category_id=category_id))
     else:
@@ -129,6 +131,7 @@ def editItem(category_id, item_id):
             category_id = request.form['category_id']
             editedItem.category_id = category_id
         session.add(editedItem)
+        flash('Item %s Edited' % editedItem.name)
         session.commit()
         return redirect(url_for('showItem', category_id=category_id, item_id=item_id))
     else:
@@ -144,6 +147,7 @@ def deleteItem(category_id, item_id):
     #     return "<script>function myFunction() {alert('You are not authorized to delete this item. Please create your own item in order to delete.');}</script><body onload='myFunction()''>"
     if request.method == 'POST':
         session.delete(itemToDelete)
+        flash('Item %s Deleted' % itemToDelete.name)
         session.commit()
         return redirect(url_for('showItems', category_id=category_id))
     else:

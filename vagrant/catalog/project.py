@@ -17,9 +17,9 @@ import requests
 
 app = Flask(__name__)
 
-# CLIENT_ID = json.loads(
-#     open('client_secrets.json', 'r').read())['web']['client_id']
-# APPLICATION_NAME = "Item Catalog"
+CLIENT_ID = json.loads(
+    open('client_secrets.json', 'r').read())['web']['client_id']
+APPLICATION_NAME = "Item Catalog"
 
 # Connect to Database and create database session
 engine = create_engine('sqlite:///itemcatalog.db')
@@ -28,7 +28,7 @@ Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-# Log In Routes and create anti-forgery state token
+# Create an anti-forgery state token
 @app.route('/login')
 def showLogin():
     state = ''.join(random.choice(string.ascii_uppercase + string.digits)
@@ -36,14 +36,15 @@ def showLogin():
     login_session['state'] = state
     return render_template('login.html', STATE=state)
 
-#dummy log in stuff just to see
-@app.route('/doit')
-def logusIn():
-    return redirect('/catalog')
-
-@app.route('/logout')
-def logOut():
-    return redirect('/catalog')
+# Exchange the authorization code for an access token
+@app.route('/gconnect', methods=['POST'])
+def gconnect():
+    # Validate state token
+    if request.args.get('state') != login_session['state']:
+        response = make_response(json.dumps('Invalid state parameter.'), 401)
+        response.headers['Content-Type'] = 'application/json'
+        return response
+    
 
 # JSON Endpoints
 @app.route('/categories/JSON')

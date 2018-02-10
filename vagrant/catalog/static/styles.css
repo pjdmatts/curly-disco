@@ -53,11 +53,30 @@ body {
 
 .flashes {
     display: flex;
+    margin-top: 0.5em;
     margin-bottom: 0.8em;
     font-size: 0.8em;
     font-style: italic;
     text-transform: uppercase;
     color: red;
+}
+
+.home {
+    align-self: flex-start;
+    margin-bottom: 0.5em;
+}
+
+.home a {
+    text-decoration: none;
+    color: black;
+}
+
+.home a:visited {
+    color: grey;
+}
+
+.home a:hover {
+    font-weight: bold;
 }
 
 /* content section of template */
@@ -210,4 +229,18 @@ body {
 
 .input {
     margin-left: 0.5em;
+}
+
+/* login page */
+.loginPage {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2em;
+    color: black;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#signinButton {
+    margin-left: 1em;
 }

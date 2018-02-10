@@ -3,15 +3,18 @@
         <h1>Colonel Carruthers' Curious Cabinet Of Collectible Cast Offs</h1>
     </div>
     <div class="login">
-        {% if 'test'=='test' %}
-            <a href="{{ url_for('showLogin') }}">log in</a>
+        {%if 'username' not in session %}
+            <a href="{{url_for('showLogin')}}">Login </a>
         {% else %}
-            <a href="{{ url_for('logOut')}}">log out</a>
+            <a href="{{url_for('logout')}}">Logout </a>
         {% endif %}
     </div>
 </div>
 <div class="tagline">
     <h2>Where you will find the most interesting objects</h2>
+</div>
+<div class="home">
+    <a href="{{ url_for('showCatalog') }}">Home</a>
 </div>
 <div class="flashes">
     {% with messages = get_flashed_messages() %}

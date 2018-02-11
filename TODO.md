@@ -5,5 +5,5 @@
 - [x] Templates & Forms
 - [x] CRUD Functionality
 - [x] API Endpoints
-- [ ] Styling and Message Flashing
-- [ ] Log In/Out & Authentication
+- [x] Styling and Message Flashing
+- [x] Log In/Out & Authentication

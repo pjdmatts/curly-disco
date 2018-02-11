@@ -32,8 +32,8 @@ The application runs from within a Vagrant VM:
 
 - Clone the vm
 - Launch the Vagrant VM.
-- ssh into the Vagrant maching
-- navigate to /vagrant/catalog
+- ssh into the Vagrant machine
+- navigate to /vagrant/catalog folder in the vm
 - initialize the database with the `database_setup.py` script
 - run the app with the following command: `python/project.py`
 - Access and test the application by visiting http://localhost:5000 locally
